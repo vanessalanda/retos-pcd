@@ -23,6 +23,7 @@ def limpiar_valor(valor):
 
     return int(numero)
 
+#programa principal
 linea = input("Ingresa numeros separados por comas: ")
 valores = linea.split(",")
 
