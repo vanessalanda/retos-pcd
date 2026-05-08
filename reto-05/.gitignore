@@ -1,4 +1,17 @@
+# Entornos virtuales (el peso pesado que no queremos en GitHub)
 .venv/
+venv/
+env/
+
+# Archivos temporales de Python
 __pycache__/
-outputs/
 *.pyc
+
+# Resultados de pruebas personales
+# Esto permite que la carpeta outputs suba pero no tus archivos .csv
+outputs/*
+!.gitkeep
+
+# Archivos de sistema
+.DS_Store
+Thumbs.db
