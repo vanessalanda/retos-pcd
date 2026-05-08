@@ -18,3 +18,17 @@ def clasificar_temperatura(celsius):
     - 26 a 35: Calido
     - >35: Extremo
     """
+    if celsius < 0:
+        return "Congelante"
+    elif celsius <= 15: #del 0 al 15
+        return "Frio"
+    elif celsius <= 25: #del 16 al 25
+        return "Templado"
+    elif celsius <=35: #del 26 al 35
+        return "Calido"
+    else: #mayor a 35
+        return "Extremo"
+    
+def main():
+    
+        
