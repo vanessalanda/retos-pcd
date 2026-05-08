@@ -1,7 +1,7 @@
 # Reto semana 03
-print ("Reto 3")
+
 import sys
-def manin ():
+def main ():
     #diccionario principal 
     productos = {}
     
@@ -29,7 +29,7 @@ def manin ():
         if producto not in productos:
             
             productos[producto] = {
-                "unidaes": 0,
+                "unidades": 0,
                 "ingreso": 0.0
             }
             
@@ -54,7 +54,7 @@ def manin ():
         
     reporte_ordenado = sorted(
         reporte_final,
-        key=lambda x: x["Ingreso"],
+        key=lambda x: x["ingreso"],
         reverse=True
     )
     
