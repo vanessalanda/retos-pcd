@@ -26,5 +26,45 @@ def manin ():
             precio_unitario = float(partes[3])
         except ValueError:
             continue
+        if producto not in productos:
+            
+            productos[producto] = {
+                "unidaes": 0,
+                "ingreso": 0.0
+            }
+            
+        productos[producto]["unidades"] += cantidad
+        productos[producto]["ingreso"] += cantidad * precio_unitario
+        
+        
+        
+    reporte_final = []
+    for nombre, datos in productos.items():
+        unidades = datos["unidades"]
+        ingreso = datos["ingreso"]
+        
+        promedio = ingreso / unidades if unidades > 0 else 0
+        
+        reporte_final.append({
+            "producto": nombre,
+            "unidades": unidades, 
+            "ingreso": ingreso, 
+            "promedio": promedio
+        })
+        
+    reporte_ordenado = sorted(
+        reporte_final,
+        key=lambda x: x["Ingreso"],
+        reverse=True
+    )
+    
+    print("Producto,unidades_vendidas,ingreso_total,precio_promedio")
+    for p in reporte_ordenado:
+        
+        print(f"{p['producto']},{p['unidades']},{p['ingreso']:.2f},{p['promedio']:.2f}")
+        
+if __name__=="__main__":
+    main()
+            
             
         
