@@ -30,5 +30,49 @@ def clasificar_temperatura(celsius):
         return "Extremo"
     
 def main():
+    #imprime encabezados de salida
+    print("Ciudad, Temperatura_celsius, Clasificacion")
     
+    primera_linea = True
+    
+    #procesar desde stdin
+    
+    for linea in sys.stdin:
+        linea = linea.strip()
         
+        if not linea: #lineas vacias
+            continue
+        
+        if primera_linea: #omitir la primera linea de encabezado
+            primera_linea = False
+            continue
+        partes = linea.split (",")
+        if len(partes) != 3:
+            continue
+        ciudad = partes[0].strip()
+        temp_str = partes [1].strip()
+        unidad = partes[2].strip().upper()
+        
+        #validar unidad sea C o F
+        if unidad  not in ["C", "F"]:
+            continue
+        
+        #validar que la temperatura respete los rangos 
+        try:
+            temperatura_original = float(temp_str)
+        except ValueError:
+            continue
+        
+        #realizar conversion
+        if unidad == "F":
+            celsius = fahrenheit_a_celsius(temperatura_original)
+        else:
+            celsius = temperatura_original
+            
+            #clasificacion
+        categoria = clasificar_temperatura(celsius)
+        #formato de salida
+        print(f"{ciudad},{celsius:.1f},{categoria}")
+        
+    if __name__ == "__main__":
+        main()
