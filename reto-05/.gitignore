@@ -1,17 +1,23 @@
-# Entornos virtuales (el peso pesado que no queremos en GitHub)
+# --- Python ---
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# --- Entornos Virtuales ---
 .venv/
 venv/
 env/
+ENV/
 
-# Archivos temporales de Python
-__pycache__/
-*.pyc
+# --- Resultados del Perfilador (Outputs) ---
+# Ignoramos todos los reportes CSV generados en las pruebas
+outputs/*.csv
 
-# Resultados de pruebas personales
-# Esto permite que la carpeta outputs suba pero no tus archivos .csv
-outputs/*
-!.gitkeep
+# Pero permitimos que el archivo .gitkeep se suba 
+# para que la carpeta outputs aparezca en GitHub
+!outputs/.gitkeep
 
-# Archivos de sistema
+# --- Archivos de Sistema ---
 .DS_Store
-Thumbs.db"
+Thumbs.db
