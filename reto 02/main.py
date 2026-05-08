@@ -74,5 +74,6 @@ def main():
         #formato de salida
         print(f"{ciudad},{celsius:.1f},{categoria}")
         
-    if __name__ == "__main__":
-        main()
+if __name__ == "__main__":
+    main()
+    
