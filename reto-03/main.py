@@ -21,24 +21,24 @@ def main():
         if not linea:
             continue
             
-        # Parsear la línea por comas
+        
         partes = linea.split(',')
         
-        # Regla 5: Ignorar si tiene menos o más de 4 columnas
+        
         if len(partes) != 4:
             continue  
             
         fecha = partes[0]
         producto = partes[1].strip()
         
-        # Regla 5: Convertir cantidad y precio con manejo de errores (try/except)
+        
         try:
             cantidad = int(partes[2])
             precio = float(partes[3])
         except ValueError:
             continue  # Ignorar la línea si no contiene números válidos
             
-        # Regla 1: Crear la entrada del producto en el diccionario si no existe
+        
         if producto not in productos:
             productos[producto] = {
                 "unidades": 0,
