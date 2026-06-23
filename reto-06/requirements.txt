@@ -1,0 +1,2 @@
+# Solo requiere Python 3.8 o superior.
+# No se necesitan dependencias externas para ejecutar este proyecto.
