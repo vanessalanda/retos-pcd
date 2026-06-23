@@ -1,4 +1,4 @@
- import re
+import re
 from typing import Dict, List, Optional, Tuple
 from collections import Counter, defaultdict
 
@@ -289,7 +289,7 @@ def mostrar_reporte(reporte: Dict) -> None:
     print("                    REPORTE DE ANÁLISIS DE LOGS")
     print("=" * 70)
 
-    print("\n📊 RESUMEN GENERAL")
+    print("\n RESUMEN GENERAL")
     print("-" * 40)
     print(f"Total de líneas procesadas: {reporte['resumen']['total_lineas']}")
     print("Por tipo:")
@@ -297,7 +297,7 @@ def mostrar_reporte(reporte: Dict) -> None:
         print(f"  • {tipo.upper()}: {count}")
 
     if 'http' in reporte:
-        print("\n🌐 LOGS HTTP")
+        print("\n LOGS HTTP")
         print("-" * 40)
         print(f"Total requests: {reporte['http']['total_requests']}")
         print("Por código de estado:")
@@ -308,7 +308,7 @@ def mostrar_reporte(reporte: Dict) -> None:
             print(f"  • {ruta}: {count} requests")
 
     if 'errores' in reporte:
-        print("\n❌ ERRORES")
+        print("\n ERRORES")
         print("-" * 40)
         print(f"Total errores: {reporte['errores']['total']}")
         print("Por nivel:")
@@ -316,29 +316,29 @@ def mostrar_reporte(reporte: Dict) -> None:
             print(f"  • {nivel}: {count}")
 
     if 'seguridad' in reporte:
-        print("\n🔒 ALERTAS DE SEGURIDAD")
+        print("\n ALERTAS DE SEGURIDAD")
         print("-" * 40)
 
         fb = reporte['seguridad'].get('alertas_fuerza_bruta', [])
         if fb:
-            print(f"⚠️  Posibles ataques de fuerza bruta: {len(fb)}")
+            print(f"  Posibles ataques de fuerza bruta: {len(fb)}")
             for alerta in fb:
                 print(f"     IP: {alerta['ip']} - {alerta['intentos']} intentos fallidos")
 
         sql = reporte['seguridad'].get('alertas_sql_injection', [])
         if sql:
-            print(f"⚠️  Posibles SQL Injection: {len(sql)}")
+            print(f"  Posibles SQL Injection: {len(sql)}")
             for alerta in sql[:3]:
                 print(f"     Query: {alerta['query'][:60]}...")
 
         pt = reporte['seguridad'].get('alertas_path_traversal', [])
         if pt:
-            print(f"⚠️  Posibles Path Traversal: {len(pt)}")
+            print(f"  Posibles Path Traversal: {len(pt)}")
             for alerta in pt[:3]:
                 print(f"     Ruta: {alerta['path']}")
 
     if 'rendimiento' in reporte:
-        print("\n⏱️  RENDIMIENTO")
+        print("\n  RENDIMIENTO")
         print("-" * 40)
         print(f"Queries lentos detectados: {len(reporte['rendimiento'].get('queries_lentos', []))}")
         if 'tiempo_promedio_queries' in reporte['rendimiento']:
