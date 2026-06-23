@@ -1,0 +1,38 @@
+# ==========================================
+# Archivos de Salida del Curso (Retos PCD)
+# ==========================================
+# Ignora cualquier kardex en formato CSV o JSON en cualquier subcarpeta
+**/kardex_*.csv
+**/kardex_*.json
+
+# Si en el futuro guardas reportes en carpetas llamadas 'salidas' o 'outputs'
+**/salidas/
+**/outputs/
+
+# ==========================================
+# Configuración de Entornos y Editores
+# ==========================================
+# Ignora la carpeta de configuración local de VS Code
+.vscode/
+
+# Ignora archivos temporales del sistema operativo
+Thumbs.db
+.DS_Store
+
+# ==========================================
+# Python y Jupyter Notebooks
+# ==========================================
+# Archivos compilados de Python
+**/__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Carpetas de entornos virtuales (por si llegas a usar uno)
+.venv/
+venv/
+env/
+ENV/
+
+# Archivos temporales de checkpoints de Jupyter
+.ipynb_checkpoints/
