@@ -1,8 +1,0 @@
-materia_id,nombre,parcial_1,parcial_2,final,promedio_materia
-MAT101,Cálculo Diferencial,5.8,7.2,7.0,6.67
-MAT102,Cálculo Integral,6.1,4.5,4.8,5.13
-PROG101,Programación I,3.9,7.5,6.9,6.1
-PROG102,Programación II,4.9,5.8,5.4,5.37
-EST101,Probabilidad,8.6,6.4,6.1,7.03
-EST102,Estadística Inferencial,4.8,4.7,5.8,5.1
-BD101,Bases de Datos,7.4,8.3,8.2,7.97
