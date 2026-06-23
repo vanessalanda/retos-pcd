@@ -1,0 +1,21 @@
+# ==========================================
+# Reto 10: Algoritmo de Strassen (C / C++)
+# ==========================================
+# Ignora los ejecutables compilados en Windows
+*.exe
+
+# Ignora archivos de objeto y librerías estáticas/dinámicas compiladas
+*.o
+*.obj
+*.out
+*.dll
+*.so
+
+# Ignora archivos de volcado de memoria o depuración
+*.log
+*.pdb
+*.ilk
+
+# Si compilas dentro de una carpeta llamada 'build' o 'bin', ignórala completa
+build/
+bin/
